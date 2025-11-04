@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_zero">0.dp</dimen>
+    <dimen name="padding_medium">16.dp</dimen>
+    <dimen name="padding_small">8.dp</dimen>
+
+    <dimen name="vertical_item_spacing">8.dp</dimen>
+    <dimen name="horizontal_item_spacing">8.dp</dimen>
+
+    <dimen name="horizontal_divider_max_width">0.5f</dimen>
+</resources>
