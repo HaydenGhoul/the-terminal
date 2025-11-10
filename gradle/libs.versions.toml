@@ -10,6 +10,9 @@ activityCompose = "1.11.0"
 composeBom = "2024.09.00"
 material3WindowSizeClass = "1.4.0"
 lifecycle-viewmodel-compose = "2.7.0"
+material-icons-extended = "1.7.8"
+animationCore = "1.9.4"
+textflow-material3 = "1.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,6 +31,9 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-material3-window-size-class1 = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "material3WindowSizeClass" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons-extended"}
+androidx-compose-animation-core = { group = "androidx.compose.animation", name = "animation-core", version.ref = "animationCore" }
+io-github-oleksandrbalan-textflow-material3 = { module = "io.github.oleksandrbalan:textflow-material3", version.ref = "textflow-material3"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

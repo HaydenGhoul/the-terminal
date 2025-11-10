@@ -5,114 +5,147 @@
     <string name="copyright">Part of the Terminal News &amp; Media Syndicate. All rights reserved.</string>
     <string name="edition_online">ONLINE EDITION</string>
 
-    <string name="article_author_by">By</string>
+    <string name="label_byline">By</string>
     <string name="label_staff_reporter_of">Staff Reporter of</string>
+    <string name="label_read_less">Read Less</string>
+    <string name="label_read_more">Read More</string>
 
+    <string name="news_org_the_gpt_times">The GPT Times</string>
     <string name="news_org_the_terminal">The Terminal</string>
-    <string name="news_org_u">Organization</string>
 
-    <string name="article_author_u">Full Name</string>
+    <string name="article_author_gpt">Chat GPT</string>
     <string name="article_author_1">Sarah Monroe</string>
     <string name="article_author_2">Lillian Abadi</string>
     <string name="article_author_3">Finsbury Bowes</string>
 
-    <string name="article_u_image_description">Image Description</string>
-    <string name="article_1_image_description">Dr. Wallace Breen</string>
-    <string name="article_2_image_description">WITNESSING THE UNKNOWABLE: No pattern has been discerned for where or when a portal will open.</string>
-    <string name="article_3_image_description">Source: Terminal Data</string>
+    <string name="article_unknown_image_caption">Image caption</string>
+    <string name="article_1_image_caption">Dr. Wallace Breen</string>
+    <string name="article_2_image_caption">WITNESSING THE UNKNOWABLE: No pattern has been discerned for where or when a portal will open.</string>
+    <string name="article_3_image_caption">Source: Terminal Data</string>
+
+    <string name="advertisement_title_1">REALITY DEFINED.</string>
+    <string name="advertisement_description_1">Precision designed.\nYour drive refined.\nYour day: divine.</string>
+    <string name="advertisement_model_1">RIGA\nSZ-912</string>
 
     <string name="article_headline_1">Unlikely Negotiator Of Peace Garners Ill Will And Distrust As Well As Praise</string>
-    <string name="article_headline_2">\"Portal\" Storm Continues</string>
-    <string name="article_headline_3">An Astronomical Downturn</string>
-    <string name="article_headline_4">Resonant Energy Fields Disrupt Black Mesa Protocols</string>
-    <string name="article_headline_5">Unexpected Portal Anomalies Force Security Response Team</string>
-    <string name="article_headline_6">Scientific Containment Breach Sparks Experimental Chaos Nearby</string>
-    <string name="article_headline_7">Strange Atmospheric Fluctuations Delay Military Reinforcement Plans</string>
-    <string name="article_headline_8">Dimensional Rifts Reveal Hidden Opposing Force Operations</string>
-    <string name="article_headline_9">Decay Experimentation Sparks Controversy Among Senior Researchers</string>
-    <string name="article_headline_10">Unidentified Aliens Appear Within Confined Laboratory Sectors</string>
-    <string name="article_headline_11">Emergency Broadcast Signals Alert Civilian Populations Instantly</string>
-    <string name="article_headline_12">Critical Infrastructure Fails Under Combined Portal And Shockwaves</string>
-    <string name="article_headline_13">Time Distortions Affect Personnel During Security Breach Exercises</string>
-    <string name="article_headline_14">Unexpected Toxic Cloud Spreads Across Lower Research Chambers</string>
-    <string name="article_headline_15">Weaponized Gravity Fields Challenge Conventional Containment Methods</string>
-    <string name="article_headline_16">High-Risk Reconnaissance Missions Observe Hostile Alien Patterns</string>
-    <string name="article_headline_17">Quantum Instabilities Detected In Sector Seven Laboratories</string>
-    <string name="article_headline_18">Biotic Contamination Forces Protocol Update And Evacuation Orders</string>
-    <string name="article_headline_19">Security Teams Encounter Unexplained Temporal Phenomena Suddenly</string>
-    <string name="article_headline_20">Abnormal Neural Feedback Hinders Operator Response Times</string>
-    <string name="article_headline_21">Facility Sensors Report Shadow Entities Moving Between Corridors</string>
-    <string name="article_headline_22">Experimental Teleportation Devices Malfunction Under External Stress</string>
-    <string name="article_headline_23">Communication Blackouts Disrupt Coordination With Civil Defense Units</string>
-    <string name="article_headline_24">Unexpected Civilian Movements Complicate Strategic Containment Plans</string>
-    <string name="article_headline_25">Hazardous Waste Leak Exposes Researchers To Unknown Energies</string>
-    <string name="article_headline_26">Military Protocols Adjust Rapidly To Multidimensional Threat Scenarios</string>
-    <string name="article_headline_27">Automated Defense Turrets Trigger Unexpected Chain Reactions Instantly</string>
-    <string name="article_headline_28">Gamma Radiation Surges Delay Experiment Completion And Analysis</string>
-    <string name="article_headline_29">Unscheduled Dimensional Shifts Interrupt Long-Term Facility Studies</string>
-    <string name="article_headline_30">Strange Auditory Signals Confuse Personnel During Crisis Evaluation</string>
-
     <string name="article_subheadline_1">Wallace Breen Acknowledges Detractors: \"I\'m Not A Politician, I\'m A Scientist\"</string>
-    <string name="article_subheadline_2">End to Combine Invasion is No Respite, Experts Warn</string>
-    <string name="article_subheadline_3">Historic Bubble Bursts Upon Earth\'s Sudden Surrender to Combine</string>
-    <string name="article_subheadline_4">Unexpected Energy Surges Sweep Across Black Mesa And Cause System Malfunctions: \"Containment Is Critical\" Urged Scientists</string>
-    <string name="article_subheadline_5">Military Teams Report Anomalous Portal Activity Within Secure Research Labs, Analysts Warn Of Potential Collateral Damage</string>
-    <string name="article_subheadline_6">High-Priority Containment Breaches Force Personnel Evacuation: Researchers Struggle To Stabilize Experimental Fields Safely</string>
-    <string name="article_subheadline_7">Strange Temporal Fluctuations Observed During Routine Security Drills, Causing Confusion And Delayed Protocol Response Times</string>
-    <string name="article_subheadline_8">Opposing Force Units Detected Operating In Unauthorized Sectors: \"Unknown Objectives\" Remain Under Investigation By Command</string>
-    <string name="article_subheadline_9">Decay Laboratory Experiments Produce Unexpected Results: Senior Scientists Debate Safety Procedures And Future Test Schedules</string>
-    <string name="article_subheadline_10">Aliens Appearing In Confined Corridors Challenge Both Security And Science Teams, Forcing Immediate Tactical Revisions</string>
-    <string name="article_subheadline_11">Emergency Broadcast Signals Trigger Civilian Alarm Systems Across Multiple Zones, Prompting Coordination With Military Oversight</string>
-    <string name="article_subheadline_12">Structural Instabilities Detected In Facility Core Areas After Combined Shockwave And Dimensional Anomalies: Engineers Issue Urgent Warnings</string>
-    <string name="article_subheadline_13">Personnel Report Experiencing Severe Time Dilation During Security Exercises, Forcing Review Of Standard Operational Procedures</string>
-    <string name="article_subheadline_14">Toxic Cloud Emerges From Lower Chambers Unexpectedly, Security Teams Scramble To Implement Containment Measures And Evacuations</string>
-    <string name="article_subheadline_15">Weaponized Gravity Experiments Affect Entire Laboratory Wing, Raising Concerns Over Long-Term Containment Risks And Protocol Safety</string>
-    <string name="article_subheadline_16">Reconnaissance Missions Reveal Hostile Alien Patterns Moving Rapidly Through Unmonitored Facility Sectors, Requiring Immediate Strategic Analysis</string>
-    <string name="article_subheadline_17">Quantum Instabilities Observed In Sector Seven Labs Produce Erratic Energy Signatures, Prompting Analytical Teams To Recommend Shutdown</string>
-    <string name="article_subheadline_18">Biotic Contamination Incident Forces Immediate Protocol Update And Civilian Evacuation: Scientists Warn Of Unpredictable Mutations</string>
-    <string name="article_subheadline_19">Security Units Encounter Unexpected Temporal Phenomena Affecting Navigation And Communications, Leading To Delayed Containment Measures</string>
-    <string name="article_subheadline_20">Abnormal Neural Feedback Interferes With Operator Equipment, Complicating Real-Time Decision Making During Critical Laboratory Operations</string>
-    <string name="article_subheadline_21">Facility Sensors Detect Shadow-Like Entities Moving Between Corridors: Analysts Investigate Potential Threat To Personnel Safety</string>
-    <string name="article_subheadline_22">Experimental Teleportation Devices Malfunction Under External Stress Conditions, Resulting In Unscheduled Dimensional Shifts And Containment Alerts</string>
-    <string name="article_subheadline_23">Communication Blackouts Disrupt Coordination Between Civil Defense And Military Units, Prompting Alternative Command Strategies</string>
-    <string name="article_subheadline_24">Unexpected Civilian Movements Within Secure Facility Sectors Complicate Strategic Containment And Evacuation Planning</string>
-    <string name="article_subheadline_25">Hazardous Waste Leak Exposes Researchers To Unknown Energies: Laboratory Protocols Reviewed To Prevent Further Incidents</string>
-    <string name="article_subheadline_26">Military Protocols Adjust Rapidly To Multidimensional Threat Scenarios, Including Portal Surges And Unstable Energy Fields</string>
-    <string name="article_subheadline_27">Automated Defense Turrets Trigger Unexpected Chain Reactions Across Facility Zones, Requiring Immediate Shutdown And Reset Procedures</string>
-    <string name="article_subheadline_28">Gamma Radiation Surges Delay Long-Term Experiment Completion, Forcing Scientists To Rethink Testing And Containment Schedules</string>
-    <string name="article_subheadline_29">Unscheduled Dimensional Shifts Interrupt Facility Studies, Causing Staff Confusion And Requiring Extensive Containment Coordination</string>
-    <string name="article_subheadline_30">Strange Auditory Signals Detected During Crisis Evaluation, Confusing Personnel And Requiring Immediate Investigation By Security Teams</string>
 
-    <string name="article_1">Breen vectors oscillate between trust echoes, scientific shadows twisting over negotiation spirals, while criticism currents ripple across perception frameworks, praise fragments scatter unpredictably.</string>
-    <string name="article_2">Portal vortices hum through city residues, energy loops fracture temporal nodes, storm fragments collide with Combine whispers, anomalous fluxes ripple along corridors of distorted awareness.</string>
-    <string name="article_3">Economic pulses shatter into technological echoes, resource shadows meander across unstable conduits, urban waves distort under systemic tremors, citizen fragments drift through cascading downturn spirals.</string>
-    <string name="article_4">Resonant energy fields caused unexpected malfunctions across the Black Mesa facility. Scientists scrambled to contain the erratic surges, issuing rapid safety protocols to all departments. Evacuation drills were partially activated, yet some personnel remained unaware of the unfolding anomalies.</string>
-    <string name="article_5">Portal anomalies appeared suddenly in secure research sectors, forcing security teams to respond immediately. Equipment failures hindered real-time monitoring, and analysts struggled to predict the full scope of dimensional instability. Several corridors experienced temporary lockdowns while investigations proceeded.</string>
-    <string name="article_6">A containment breach within experimental laboratories generated chaotic energy flows. Researchers attempted stabilization procedures while alarm systems signaled irregular power fluctuations. Senior scientists debated immediate shutdowns, weighing potential damage against critical experimental data.</string>
-    <string name="article_7">Temporal distortions interfered with routine security drills, delaying standard operating procedures. Personnel reported disorientation, complicating evacuation simulations and emergency communication. Engineers investigated anomalous sensor readings that hinted at external interference from unknown sources.</string>
-    <string name="article_8">Opposing Force units were observed conducting unauthorized operations within restricted sectors. Commanders struggled to understand their objectives while coordinating internal responses. Analysts noted patterns suggesting long-term strategic preparation beyond standard facility protocols.</string>
-    <string name="article_9">Decay experiments produced unexpected chemical reactions, creating a volatile environment. Senior scientists debated safety measures, emphasizing containment over experimental progression. Emergency protocols were drafted to ensure minimal exposure of staff and equipment.</string>
-    <string name="article_10">Alien entities appeared within confined corridors, creating panic among research teams. Security measures were reinforced, and tactical squads responded to contain the unknown intruders. Observers documented unusual behavior, raising questions about intelligence and origin.</string>
-    <string name="article_11">Emergency broadcast signals triggered widespread alarms, alerting civilian populations across multiple zones. Military oversight coordinated evacuation efforts while analysts monitored communication failures. Response teams faced challenges adapting to rapidly evolving threat conditions.</string>
-    <string name="article_12">Structural instabilities emerged following combined shockwave and dimensional anomalies. Engineers issued warnings as containment fields fluctuated unpredictably. Damage assessments revealed compromised infrastructure in several core laboratory sectors, prompting immediate action.</string>
-    <string name="article_13">Personnel experienced severe time dilation during security exercises, affecting navigation and task completion. Researchers documented chronological anomalies, noting correlations with energy surges. Adjustments to standard operating procedures were recommended to mitigate ongoing temporal disruptions.</string>
-    <string name="article_14">A toxic cloud unexpectedly emerged from lower chambers, prompting rapid evacuation. Security teams implemented containment measures while researchers donned protective equipment. Preliminary tests indicated chemical properties unlike previous observations, warranting further investigation.</string>
-    <string name="article_15">Weaponized gravity experiments impacted entire laboratory wings, raising safety concerns. Structural monitoring detected abnormal stress patterns, and emergency shutdown protocols were engaged. Analysts emphasized cautious progression to prevent further destabilization.</string>
-    <string name="article_16">Reconnaissance missions uncovered hostile alien patterns in unmonitored sectors. Teams documented rapid movements and unpredictable behavior, complicating tactical planning. Immediate strategic adjustments were necessary to maintain facility security.</string>
-    <string name="article_17">Quantum instabilities in Sector Seven generated erratic energy signatures. Analytical teams recommended temporary shutdowns while monitoring fluctuations. Observed effects included sensor malfunctions and unpredictable field variations.</string>
-    <string name="article_18">A biotic contamination incident forced immediate protocol updates. Civilian evacuation orders were issued as scientists assessed mutation risks. Containment procedures were reinforced, emphasizing safety and minimal exposure.</string>
-    <string name="article_19">Security personnel encountered temporal phenomena affecting navigation and communications. Delayed containment measures resulted in confusion, requiring adaptive strategies. Analysts reviewed historical data to understand anomaly triggers and patterns.</string>
-    <string name="article_20">Abnormal neural feedback disrupted operator equipment, complicating decision-making. Monitoring systems indicated unusual cognitive interference, prompting additional safety protocols. Investigations explored potential external influences causing widespread system irregularities.</string>
-    <string name="article_21">Facility sensors detected shadow-like entities traversing corridors. Analysts investigated potential threats to personnel safety while reviewing surveillance footage. Immediate precautionary measures were enacted to prevent further incidents.</string>
-    <string name="article_22">Experimental teleportation devices malfunctioned under external stress, producing unplanned dimensional shifts. Containment alerts were triggered as energy flows became unpredictable. Researchers worked rapidly to stabilize experimental fields before escalation.</string>
-    <string name="article_23">Communication blackouts disrupted coordination between civil defense and military units. Alternative command strategies were implemented while monitoring attempts to restore network functionality. Analysts emphasized redundancy to maintain operational control.</string>
-    <string name="article_24">Unexpected civilian movements within secure sectors complicated containment and evacuation plans. Teams adapted to spontaneous activity while maintaining safety protocols. Observations suggested psychological stress and environmental disorientation contributed to behavior.</string>
-    <string name="article_25">Hazardous waste leaks exposed researchers to unknown energies, prompting urgent containment revisions. Laboratory protocols were updated, emphasizing minimal human exposure. Teams performed risk assessments and monitored long-term environmental effects.</string>
-    <string name="article_26">Military protocols adapted quickly to multidimensional threat scenarios. Portal surges and unstable energy fields required dynamic response measures. Commanders coordinated tactical units to minimize risk and maintain operational continuity.</string>
-    <string name="article_27">Automated defense turrets triggered unexpected chain reactions across facility zones. Immediate shutdown and reset procedures were enacted to prevent equipment damage. Analysts reviewed system designs to reduce future malfunction potential.</string>
-    <string name="article_28">Gamma radiation surges delayed experiment completion, forcing reevaluation of testing schedules. Scientists monitored exposure levels while maintaining containment protocols. Observed effects included equipment instability and procedural adjustments.</string>
-    <string name="article_29">Unscheduled dimensional shifts disrupted facility studies, causing staff confusion. Containment coordination required continuous adjustment, and analysts documented irregular phenomena. Researchers reported increased temporal disorientation among personnel.</string>
-    <string name="article_30">Strange auditory signals detected during crisis evaluation confused personnel. Immediate investigation by security teams was necessary, revealing unpredictable patterns. Analysts emphasized monitoring to ensure operational readiness and safety.</string>
-    <string name="label_read_less">Read Less</string>
-    <string name="label_read_more">Read More</string>
+    <string name="article_headline_2">\"Portal\" Storm Continues</string>
+    <string name="article_subheadline_2">End to Combine Invasion is No Respite, Experts Warn</string>
+
+    <string name="article_headline_3">An Astronomical Downturn</string>
+    <string name="article_subheadline_3">Historic Bubble Bursts Upon Earth\'s Sudden Surrender to Combine</string>
+
+    <string name="article_headline_4">Echo Of Silence, Across The Northern Wall</string>
+    <string name="article_subheadline_4">Central Authority Reports Failing Communications: Scientists Advise Isolation During \"Low Resonance\" Phases</string>
+
+    <string name="article_headline_5">Research Bureau Issues New Directive On Containment</string>
+    <string name="article_subheadline_5">Officials Confirm Restricted Access to All Laboratories, Citing \"Environmental Instability\" and Safety Concerns</string>
+
+    <string name="article_headline_6">Winds Over White Forest, Carry The Memory Of Dust</string>
+    <string name="article_subheadline_6">Unverified Reports Indicate Activity Within Abandoned Facilities: \"We Heard Machines Breathing,\" One Witness Claims</string>
+
+    <string name="article_headline_7">\"Portal\" Storm Continues, Despite Government\'s Denials</string>
+    <string name="article_subheadline_7">The Ministry of Science Describes Disturbances as \"Localized Atmospheric Irregularities\" Affecting Peripheral Zones</string>
+
+    <string name="article_headline_8">Silent Trains Arrive, Carrying No Personnel</string>
+    <string name="article_subheadline_8">Sources Suggest Automated Convoys Operating Without Oversight, though the Rail Authority Declines to Comment</string>
+
+    <string name="article_headline_9">Wallace Breen Addresses The Council On Order And Trust</string>
+    <string name="article_subheadline_9">In His Latest Broadcast, He States: \"The Transition Isn\'t Collapse, It’s Control\"</string>
+
+    <string name="article_headline_10">Echo Grid Malfunctions, Signal Becomes Self-Aware</string>
+    <string name="article_subheadline_10">Operators Report Patterns in the Static that Resemble Speech, yet No Identifiable Source Has Been Found</string>
+
+    <string name="article_headline_11">Beneath The Research Complex, Lights Refuse To Dim</string>
+    <string name="article_subheadline_11">Maintenance Crews Report Energy Surges at Night, Possibly Linked to Resonant Field Fluctuations in Sublevel D</string>
+
+    <string name="article_headline_12">Synthetic Rain Falls Twice, And Never Dries</string>
+    <string name="article_subheadline_12">Experts Note Atmospheric Layers Behaving Unnaturally: \"Moisture Persists even in Sealed Chambers,\" Says Lead Analyst</string>
+
+    <string name="article_headline_13">Military Units Withdraw From Sector 8, No Explanation Given</string>
+    <string name="article_subheadline_13">Defense Representatives Refuse to Comment: \"No Statement Until Containment Verified,\" Reports the Press Office</string>
+
+    <string name="article_headline_14">Voice In The Static, Claims It\'s Human</string>
+    <string name="article_subheadline_14">Signal Origin Remains Unknown, yet Phrases Like \"We Are Still Here\" Repeat Across All Channels</string>
+
+    <string name="article_headline_15">\"The Colonies Will Endure,\" Declares Administrative Core</string>
+    <string name="article_subheadline_15">A Renewed Propaganda Campaign Launches Following Reports of Panic and Resource Shortages in Outer Zones</string>
+
+    <string name="article_headline_16">Black Mesa Echo Detected Beneath Infrastructure Grid</string>
+    <string name="article_subheadline_16">Technicians Identify Residual Particles Consistent with Experimental Energy Tests Now Reactivating under Stress</string>
+
+    <string name="article_headline_17">Defense Patrols Vanish, Surveillance Continues As Normal</string>
+    <string name="article_subheadline_17">\"There\'s No Cause for Concern,\" States the Military Office, though Cameras Remain Fixed on Empty Streets</string>
+
+    <string name="article_headline_18">Central Core Emits Harmonic Lull, Calming Personnel</string>
+    <string name="article_subheadline_18">Medical Divisions Report Reduced Anxiety Patterns: \"It’s Not Influence, It’s Adaptation,\" One Scientist Claims</string>
+
+    <string name="article_headline_19">Breen Acknowledges Detractors: \"I\'m Not A Politician, I\'m A Scientist\"</string>
+    <string name="article_subheadline_19">His Statement Sparks Debate among Staff as Confidence in the Administration Appears Divided</string>
+
+    <string name="article_headline_20">No Birds Remain, Yet The Sky Still Echoes</string>
+    <string name="article_subheadline_20">Residents Report Phantom Chirps During Dawn Hours, Possibly a Byproduct of Residual Atmospheric Data Loops</string>
+
+    <string name="article_headline_21">Sector 12 Floods With Light, But No Heat</string>
+    <string name="article_subheadline_21">Officials Attribute the Event to \"Routine Power Tests,\" while Local Instruments Record Radiation Peaks</string>
+
+    <string name="article_headline_22">The Air Speaks Back, Through Broken Intercoms</string>
+    <string name="article_subheadline_22">Several Facilities Report Unprompted Transmissions Repeating the Phrase: \"We Never Left the Experiment\"</string>
+
+    <string name="article_headline_23">Research Division Unveils \"Peace Enforcement\" Drone Prototype</string>
+    <string name="article_subheadline_23">Analysts Warn of Self-Learning Algorithms and Non-Lethal Correction Systems Now Active in Test Environments</string>
+
+    <string name="article_headline_24">Old World\'s Currency Discovered In Storage Bunkers</string>
+    <string name="article_subheadline_24">Economists Dismiss the Find as Symbolic: \"The Only Remaining Value Is Obedience,\" States Market Overseer</string>
+
+    <string name="article_headline_25">Administrator Issues Directive: \"Forget The Mountains\"</string>
+    <string name="article_subheadline_25">The Order Sparks Confusion as Maps and Geological Records Quietly Begin Vanishing from Public Archives</string>
+
+    <string name="article_headline_26">Civic Broadcast Malfunction Reveals Hidden Frequency</string>
+    <string name="article_subheadline_26">Engineers Describe the Signal as \"A Mirror Loop,\" Playing Voices of Personnel No Longer Registered</string>
+
+    <string name="article_headline_27">Breen\'s Silent Amid Reports Of Internal Division</string>
+    <string name="article_subheadline_27">Insiders Suggest Conflicting Directives within the Administration, yet Official Channels Insist on Stability</string>
+
+    <string name="article_headline_28">\"Resonance Cascade\" Mention Reappears In Academic Circles</string>
+    <string name="article_subheadline_28">Researchers Attempt to Reconstruct Lost Documentation, Describing the Event as \"Algorithmic Catastrophe in Slow Motion\"</string>
+
+    <string name="article_headline_29">Scientists Gather In Silence, Facing The Reactor</string>
+    <string name="article_subheadline_29">The Unofficial Ritual Spreads Across Laboratories: \"We Listen, Because It Listens Back,\" States Participant</string>
+
+    <string name="article_headline_30">Obsolete Terminals Begin Speaking In Unison</string>
+    <string name="article_subheadline_30">Technicians Record Messages Referring to \"Arrival Complete,\" Before Systems Power Down without Trace</string>
+
+    <string name="article_1">Decades spent on the cutting edge of theoretical physics put Dr. Wallace Breen in a unique position to negotiate a sweeping multinational surrender to the extraterrestrial invasion force known as \"the Combine.\"\nBut a lifetime ensconced in the bureaucracy of government-funded research-with its security clearances and an emphasis on theory and long-term exploration over urgency and practicality-has left Breen (52) ill-equipped for the moral and political scrutiny his actions have invited</string>
+    <string name="article_2">Scientists remain unable to offer any solution to the ongoing \"portal\" storm that has devastated cities worldwide, nor are they any closer to determining how to predict when new portals will appear.\nContrary to early speculation, however, there is a growing consensus that these bizarre weather events, which have deposited aggressive and dangerous creatures at random locations, have not been instigated by the invading \"Combine\" military force. Indeed, the portal creatures and the \"Combine\" appear to be adversaries, according to Nicholas Branken, senior professor of sociocultural anthropology at the University of Helsinki</string>
+    <string name="article_3">The soaring markets that had investors riding high mere weeks ago now feel like a distant dream, with the shocking onset of destructive meteorological events and a brutal global war sending stocks plunging.\nMere days later, most stock markets have closed entirely. Markets in New York, Shanghai, Hong Kong, London, and Europe have suspended trading. With communication lines out of Japan largely inactive, the status of Tokyo\'s stock market is currently unknown, but assumed to be closed</string>
+    <string name="article_4">The first static echoes reached the northern boundary before dawn. Observers described the sound as both mechanical and organic, a tone shaped by wind and wire. Reports suggest the wall itself vibrates at irregular intervals, though no official has acknowledged such motion.\nEngineers stationed near the perimeter confirm intermittent pulses recorded by unshielded instruments. The origin remains classified. Some personnel claim to sense faint whispers within the resonance — a language forming, then folding upon itself</string>
+    <string name="article_5">The Bureau\'s directive arrived sealed and unsigned, carrying only a numeric cipher. Laboratories now operate under dimmed light, equipment humming with residual heat. No staff are permitted beyond the second corridor without retinal authorization.\nRumors circulate of an uncontained specimen, though leadership insists it\'s theoretical. Most assume the memo refers to cross-field contamination — a concept that grows more literal each day</string>
+    <string name="article_6">The wind around the White Forest bends like liquid through magnetic glass. Observers report faint luminescence where mist touches the treetops. Instruments fail to register temperature, suggesting interference from deep-structure emissions.\nLocals describe unseen movements near the abandoned silos — not footsteps, but a sound resembling thought. The forest listens, and occasionally replies</string>
+    <string name="article_7">Storm intensity increases despite the silence of officials. Witnesses recount metallic lightning branching across the sky, each flash leaving static in the bloodstream. Many describe the storms as \"structured,\" like deliberate architecture unfolding in air.\nUnconfirmed theories suggest an overlap between magnetic interference and spatial decay. If true, the atmosphere itself is learning to repeat commands</string>
+    <string name="article_8">Automated trains continue to arrive, unoccupied and unannounced. Their engines operate on no known timetable, yet motion persists as if guided by a hidden operator. Steel doors remain sealed, emitting low tonal vibrations.\nInspectors report no thermal signatures within the cars, though control panels respond to voice frequencies. The question persists: who is still listening on the other side?</string>
+    <string name="article_9">Dr. Breen addressed the Council under flickering lights, the room heavy with interference. He spoke of progress as if reading scripture, eyes fixed on invisible data streams. The word \"trust\" repeated until it lost meaning.\nAfterward, the broadcast looped for eight hours across all civic channels. Listeners claim the tone shifted slightly — his voice no longer matching human cadence</string>
+    <string name="article_10">Static across the Echo Grid formed recognizable intervals last night. Operators described the sound as recursive, suggesting self-referential computation within the interference. The grid\'s harmonics began mimicking their own diagnostic tones.\nWhen power was cut, the signal persisted for seventy-two seconds, independent of input. Some technicians believe the static has learned to dream</string>
+    <string name="article_11">Below the research complex, generators hum beyond operational tolerance. The light refuses to dim even after full system shutdown. Supervisors insist it\'s a visual anomaly — a trick of persistence.\nYet, shadows behave as if attached to absent bodies. Maintenance staff keep their distance, documenting glow variance while pretending not to count the silhouettes</string>
+    <string name="article_12">The artificial rain cycles have exceeded their programmed duration by 43%. Moisture no longer follows gravity, drifting laterally across containment domes. Atmospheric models now resemble abstract art.\nDr. Kreel described the event as \"evaporation with memory.\" Condensation collects on lab windows, forming shapes that mirror unread equations</string>
+    <string name="article_13">Military withdrawal from Sector 8 occurred without formal broadcast. Satellite telemetry shows vehicles departing in a spiral formation, though coordinates remain blank. The absence itself seems intentional.\nCivilians report an afterimage of searchlights sweeping empty ground. Official statements classify it as \"routine evacuation,\" a phrase now synonymous with disappearance</string>
+    <string name="article_14">A repeating voice emerged from the static bands early this morning. Technicians confirmed its human tone but could not match it to any registry file. The transmission repeats the phrase \"I am awake\" every eleven seconds.\nAttempts to trace its source result only in mirrored echoes. The signal recognizes interruption and adjusts its own frequency — as if unwilling to be silenced</string>
+    <string name="article_15">The Administrative Core released a recorded declaration asserting stability across all colonies. The message, though confident, carried distortion resembling suppressed feedback. The word \"endure\" appears seventeen times.\nCitizens report synchronized pauses in power flow during the announcement. Some interpret it as unity — others, as a pulse of warning wrapped in bureaucratic calm</string>
+    <string name="article_16">Residual energy beneath the infrastructure grid has begun to fluctuate beyond calibration limits. Technicians found traces of exotic particles once confined to controlled chambers. Instruments misreport mass as probability.\nArchived records reference a \"cascade precursor\" event, classified since the late fiscal cycle. Whatever stirs below, it now hums with administrative indifference</string>
+    <string name="article_17">Patrols ceased at dawn, though the surveillance network remained vigilant. Cameras continued to pan and zoom, tracking phantom heat signatures. The system appears self-sustaining — or self-aware.\nPublic statements deny malfunction, insisting on \"adaptive oversight protocols.\" Meanwhile, empty streets remain under perfect observation</string>
+    <string name="article_18">Personnel exposed to the Core\'s harmonic lull describe euphoria bordering on sedation. Heart rates fall, and coordinated speech dissolves into murmured agreement. The effect extends through walls, indifferent to shielding.\nMedical reports list improved compliance but reduced autonomy. \"It feels like breathing instruction,\" one subject wrote, before forgetting the words entirely</string>
+    <string name="article_19">During a controlled broadcast, Breen addressed accusations with academic precision. He invoked scientific integrity, not politics, yet every word carried the weight of command. The audience responded with algorithmic applause.\nAnalysts note microsecond delays between his speech and transmission, suggesting preprocessing — a voice filtered through approval itself</string>
+    <string name="article_20">The absence of birds has not silenced the dawn. Sonic anomalies replicate familiar patterns, though no life remains to produce them. It\'s as if the air replays memory through frequency alone.\nObservers report that each phantom call ends with static, looping indefinitely. The sky hums with nostalgia for organic failure</string>
+    <string name="article_21">At precisely 0300 hours, Sector 12 illuminated without heat emission. Radiation counters spiked briefly before resetting to zero. Officials labeled the event \"routine calibration.\"\nWitnesses insist the light carried weight, pressing against surfaces like fog made solid. It faded only when no one remained to see it</string>
+    <string name="article_22">Unscheduled transmissions were detected on obsolete intercom networks. The voice, fragmented yet rhythmic, repeated the phrase \"we never left.\" Signal analysis found embedded timestamps decades old.\nAudio experts claim the tone matches archival recordings from early resonance studies. The air, it seems, still remembers its operators</string>
+    <string name="article_23">A prototype enforcement drone was unveiled at the Defense Hall with minimal ceremony. The machine hovered soundlessly, emitting faint tonal cues between camera rotations. Its optics reflected every observer simultaneously.\nDevelopers claim the drone interprets hesitation as hostility. Tests are ongoing — though some data logs now redact themselves</string>
+    <string name="article_24">Storage crews uncovered sealed crates marked with pre-war emblems. Inside lay faded currency, brittle and meaningless. Economists treated the discovery like an archaeological joke.\nStill, rumors spread that some bills carry warmth when touched. They whisper faintly, promising value to those who already obey</string>
+    <string name="article_25">An internal directive ordered the deletion of all mountain references from public record. Geological databases now return blank maps. Employees were told this improves \"clarity of focus.\"\nSeveral archivists reported vertigo when describing elevation. One researcher insisted the horizon feels closer — as if the land obeyed the memo</string>
+    <string name="article_26">A civic broadcast interrupted scheduled programming, replacing it with a frequency unassigned to any channel. The content mirrored familiar voices, each sentence folding into the next.\nSpectrographic scans revealed hidden modulation below human hearing. Technicians swear the static whispered their own names, perfectly pronounced</string>
+    <string name="article_27">Internal channels report administrative silence, though peripheral chatter grows louder. Rumors of conflicting directives circulate without origin. Each department claims the other is in control.\nThe result is equilibrium through confusion — a balance of noise and obedience. Somewhere, leadership continues speaking, unheard but entirely certain</string>
+    <string name="article_28">Academic circles revived discussion of the \"resonance cascade,\" though the term remains forbidden in official documentation. Scholars frame it as theoretical catastrophe, conveniently timeless.\nRecovered fragments of prior simulations show recursive decay — equations devouring themselves. No one admits authorship, yet every institute keeps a copy</string>
+    <string name="article_29">At shift change, scientists gathered before the main reactor without speaking. Their presence triggered motion sensors, activating the observation glass. The reactor answered with a low, continuous hum.\nWhen questioned, participants claimed they were waiting for acknowledgment. \"It was listening,\" one said. \"So we waited for it to finish.\"</string>
+    <string name="article_30">Decommissioned terminals powered on without external input. Screens displayed strings of coordinates, each corresponding to erased facilities. Operators stood by, unsure whether to document or pray.\nWhen the power grid was cut, the terminals continued transmitting internally. The last visible message read simply: \"Arrival confirmed.\"</string>
+
 </resources>

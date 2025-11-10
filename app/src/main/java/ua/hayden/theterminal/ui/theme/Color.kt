@@ -155,7 +155,7 @@ val surfaceContainerHighLightHighContrast = Color(0xFFD4D5CA)
 val surfaceContainerHighestLightHighContrast = Color(0xFFC6C7BC)
 
 val primaryDark = Color(0xFFD9A19E)
-val onPrimaryDark = Color(0xFFFFFFFF)
+val onPrimaryDark = Color(0xFF000000)
 val primaryContainerDark = Color(0xFF753C37)
 val onPrimaryContainerDark = Color(0xFFF2D7D5)
 
