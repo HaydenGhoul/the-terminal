@@ -1,11 +1,8 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class)
+@file:OptIn(ExperimentalMaterial3Api::class)
 
-package ua.hayden.theterminal
+package ua.hayden.theterminal.ui.app
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -25,17 +22,18 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarData
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -43,77 +41,110 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.core.net.toUri
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
+import ua.hayden.theterminal.R
+import ua.hayden.theterminal.model.NewsFeedRepository
+import ua.hayden.theterminal.model.ResourceProviderImpl
 import ua.hayden.theterminal.ui.newsfeed.NewsFeedScreen
 import ua.hayden.theterminal.ui.theme.TheTerminalTheme
 import ua.hayden.theterminal.viewmodel.NewsFeedViewModel
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            TheTerminalTheme {
-                val windowSizeClass = calculateWindowSizeClass(this@MainActivity)
-                val widthSizeClass = windowSizeClass.widthSizeClass
-                val viewModel: NewsFeedViewModel = viewModel()
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    TheTerminalApp(widthSizeClass, viewModel)
-                }
-            }
-        }
-    }
-}
+import ua.hayden.theterminal.viewmodel.UiEvent
+import ua.hayden.theterminal.model.NewsFeed
+import ua.hayden.theterminal.ui.newsfeed.NewsFeedGrid
 
 /**
  * The root composable of The Terminal app.
  *
- * @param widthSizeClass Used to
- * @param viewModel The [NewsFeedViewModel] that provides the article lis state.
+ * Handles app layout including top bar, floating action button, snackbar host, and
+ * news feed screen. Also collects and reacts to events from [NewsFeedViewModel] such as
+ * opening URLs or showing snackbars.
+ *
+ * @param modifier Modifier applied to the [NewsFeedScreen] layout.
+ * @param widthSizeClass Determines layout adaptations based on window size.
+ * @param viewModel Provides [NewsFeed] data and event flow.
  */
 @Composable
 fun TheTerminalApp(
+    modifier: Modifier = Modifier,
     widthSizeClass: WindowWidthSizeClass,
     viewModel: NewsFeedViewModel
 ) {
-    val gridState = rememberLazyStaggeredGridState()
-    val articles by viewModel.articles
-    val advertisement by viewModel.advertisement
-
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    val gridState = rememberLazyStaggeredGridState()
+
+    val snackbarHostState = remember { SnackbarHostState() }
+
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+
+    LaunchedEffect(viewModel) {
+        viewModel.events.collect { event ->
+            when (event) {
+                is UiEvent.OpenUrl -> {
+                    val intent = Intent(Intent.ACTION_VIEW, event.url.toUri())
+                    context.startActivity(intent)
+                }
+
+                is UiEvent.ShowSnackbar -> {
+                    scope.launch {
+                        snackbarHostState.currentSnackbarData?.dismiss()
+                        snackbarHostState.showSnackbar(
+                            message = event.message,
+                            duration = SnackbarDuration.Short
+                        )
+                    }
+                }
+            }
+        }
+    }
 
     Scaffold(
         topBar = { TheTerminalTopAppBar(scrollBehavior = scrollBehavior) },
         floatingActionButton = { ScrollToTopButton(gridState = gridState) },
+        snackbarHost = { SnackbarHost(snackbarHostState) { TheTerminalSnackbar(it) } },
         modifier = Modifier
             .fillMaxSize()
             .nestedScroll(scrollBehavior.nestedScrollConnection)
     ) { innerPadding ->
         NewsFeedScreen(
+            modifier = modifier,
             widthSizeClass = widthSizeClass,
             contentPadding = innerPadding,
             gridState = gridState,
-            articles = articles,
-            advertisement = advertisement
+            viewModel = viewModel
         )
     }
 }
 
 /**
+ * Custom [Snackbar] that matches The Terminal app theme.
+ *
+ * @param data The [SnackbarData] to display.
+ */
+@Composable
+fun TheTerminalSnackbar(data: SnackbarData) {
+    Snackbar(
+        snackbarData = data,
+        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+        actionColor = MaterialTheme.colorScheme.primary
+    )
+}
+
+/**
  * Displays the top app bar for The Terminal app.
  *
- * Shows the app title and edition label centered within a [CenterAlignedTopAppBar].
+ * Shows the app name and edition label centered within a [CenterAlignedTopAppBar].
+ * Supports scroll behavior to collapse/expand on scroll.
  *
- * @param modifier For styling and layout.
- * @param scrollBehavior
+ * @param modifier Modifier applied to the [CenterAlignedTopAppBar] layout.
+ * @param scrollBehavior Controls top app bar scroll interactions.
  */
 @Composable
 fun TheTerminalTopAppBar(
@@ -142,8 +173,11 @@ fun TheTerminalTopAppBar(
 }
 
 /**
- * @param modifier
- * @param gridState
+ * Floating action button that scrolls the [LazyStaggeredGridState] to the top when pressed.
+ * Becomes visible only when the user scrolls up and the list is not at the top.
+ *
+ * @param modifier Modifier applied to the [FloatingActionButton] layout.
+ * @param gridState The [LazyStaggeredGridState] to control scrolling.
  */
 @Composable
 fun ScrollToTopButton(
@@ -152,16 +186,20 @@ fun ScrollToTopButton(
 ) {
     val scope = rememberCoroutineScope()
     var isVisible by remember { mutableStateOf(false) }
-    var previousIndex by remember { mutableIntStateOf(gridState.firstVisibleItemIndex) }
 
     LaunchedEffect(gridState) {
-        snapshotFlow { gridState.firstVisibleItemIndex }
-            .collect { currentIndex ->
-                when {
-                    currentIndex < previousIndex && currentIndex > 0 -> { isVisible = true }
-                    currentIndex > previousIndex || currentIndex == 0 -> { isVisible = false }
+        var previous = gridState.firstVisibleItemIndex to gridState.firstVisibleItemScrollOffset
+        snapshotFlow { gridState.firstVisibleItemIndex to gridState.firstVisibleItemScrollOffset }
+            .distinctUntilChanged()
+            .collect { (currentIndex, currentOffset) ->
+                val (previousIndex, previousOffset) = previous
+                val scrolledUp = when {
+                    currentIndex < previousIndex -> true
+                    currentIndex == previousIndex && currentOffset < previousOffset -> true
+                    else -> false
                 }
-                previousIndex = currentIndex
+                isVisible = scrolledUp && (currentIndex > 0 || currentOffset > 0)
+                previous = currentIndex to currentOffset
             }
     }
 
@@ -183,7 +221,7 @@ fun ScrollToTopButton(
         FloatingActionButton(
             onClick = { scope.launch { gridState.animateScrollToItem(0) } },
             content = { Icon(Icons.Rounded.KeyboardArrowUp, contentDescription = null) },
-            modifier = modifier.graphicsLayer(clip = false)
+            modifier = modifier
         )
     }
 }
@@ -194,10 +232,18 @@ fun ScrollToTopButton(
 @Preview(showBackground = false)
 @Composable
 fun TheTerminalAppLightPreview() {
+    val context = LocalContext.current
+
+    val viewModel = remember {
+        NewsFeedViewModel(
+            repository = NewsFeedRepository,
+            resProvider = ResourceProviderImpl(context)
+        )
+    }
     TheTerminalTheme {
         TheTerminalApp(
             widthSizeClass = WindowWidthSizeClass.Compact,
-            viewModel = viewModel()
+            viewModel = viewModel
         )
     }
 }
@@ -208,10 +254,18 @@ fun TheTerminalAppLightPreview() {
 @Preview(showBackground = false)
 @Composable
 fun TheTerminalAppDarkPreview() {
+    val context = LocalContext.current
+
+    val viewModel = remember {
+        NewsFeedViewModel(
+            repository = NewsFeedRepository,
+            resProvider = ResourceProviderImpl(context)
+        )
+    }
     TheTerminalTheme(darkTheme = true) {
         TheTerminalApp(
             widthSizeClass = WindowWidthSizeClass.Compact,
-            viewModel = viewModel()
+            viewModel = viewModel
         )
     }
 }

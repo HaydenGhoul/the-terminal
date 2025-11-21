@@ -15,7 +15,7 @@ android {
         minSdk = 24
         targetSdk = 36
         versionCode = 1
-        versionName = "1.4"
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.window.size.class1)
     implementation(libs.androidx.compose.animation.core)
+    implementation(libs.androidx.window)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

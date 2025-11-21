@@ -2,14 +2,17 @@ package ua.hayden.theterminal.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.runtime.Immutable
 
+@Immutable
 data class Article(
-    val id: Int,
-    @StringRes val headline: Int,
-    @StringRes val subheadline: Int,
-    @StringRes val author: Int,
-    @StringRes val newsOrg: Int,
+    override val id: Int,
+    val headline: String,
+    val subheadline: String,
+    val author: String,
+    val newsOrg: String,
     @DrawableRes val image: Int,
-    @StringRes val imageCaption: Int,
-    @StringRes val text: Int
-)
+    val imageCaption: String,
+    val text: String,
+    val url: String?
+) : NewsFeed

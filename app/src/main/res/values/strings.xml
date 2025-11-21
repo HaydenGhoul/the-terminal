@@ -2,30 +2,35 @@
     <string name="app_name">The Terminal.</string>
     <string name="app_name_uppercase">THE TERMINAL.</string>
 
+    <string name="snackbar_access_denied">Access Denied</string>
+
     <string name="copyright">Part of the Terminal News &amp; Media Syndicate. All rights reserved.</string>
     <string name="edition_online">ONLINE EDITION</string>
 
-    <string name="label_byline">By</string>
+    <string name="label_by">By</string>
     <string name="label_staff_reporter_of">Staff Reporter of</string>
-    <string name="label_read_less">Read Less</string>
     <string name="label_read_more">Read More</string>
 
-    <string name="news_org_the_gpt_times">The GPT Times</string>
+    <string name="news_org_example">The GPT Times</string>
     <string name="news_org_the_terminal">The Terminal</string>
 
-    <string name="article_author_gpt">Chat GPT</string>
+    <string name="article_author_example">Chat GPT</string>
     <string name="article_author_1">Sarah Monroe</string>
     <string name="article_author_2">Lillian Abadi</string>
     <string name="article_author_3">Finsbury Bowes</string>
 
-    <string name="article_unknown_image_caption">Image caption</string>
-    <string name="article_1_image_caption">Dr. Wallace Breen</string>
-    <string name="article_2_image_caption">WITNESSING THE UNKNOWABLE: No pattern has been discerned for where or when a portal will open.</string>
-    <string name="article_3_image_caption">Source: Terminal Data</string>
+    <string name="article_image_caption_example">Image caption</string>
+    <string name="article_image_caption_1">Dr. Wallace Breen</string>
+    <string name="article_image_caption_2">WITNESSING THE UNKNOWABLE: No pattern has been discerned for where or when a portal will open.</string>
+    <string name="article_image_caption_3">Source: Terminal Data</string>
 
-    <string name="advertisement_title_1">REALITY DEFINED.</string>
-    <string name="advertisement_description_1">Precision designed.\nYour drive refined.\nYour day: divine.</string>
-    <string name="advertisement_model_1">RIGA\nSZ-912</string>
+    <string name="article_url_1_3">https://store.steampowered.com/app/546560/HalfLife_Alyx/</string>
+
+    <string name="ad_title_1">REALITY DEFINED.</string>
+    <string name="ad_caption_1">Precision designed.\nYour drive refined.\nYour day: divine.</string>
+    <string name="ad_model_1">RIGA\nSZ-912</string>
+    <string name="ad_url_1">https://store.steampowered.com/app/4000/Garrys_Mod/</string>
+
 
     <string name="article_headline_1">Unlikely Negotiator Of Peace Garners Ill Will And Distrust As Well As Praise</string>
     <string name="article_subheadline_1">Wallace Breen Acknowledges Detractors: \"I\'m Not A Politician, I\'m A Scientist\"</string>
@@ -147,5 +152,4 @@
     <string name="article_28">Academic circles revived discussion of the \"resonance cascade,\" though the term remains forbidden in official documentation. Scholars frame it as theoretical catastrophe, conveniently timeless.\nRecovered fragments of prior simulations show recursive decay — equations devouring themselves. No one admits authorship, yet every institute keeps a copy</string>
     <string name="article_29">At shift change, scientists gathered before the main reactor without speaking. Their presence triggered motion sensors, activating the observation glass. The reactor answered with a low, continuous hum.\nWhen questioned, participants claimed they were waiting for acknowledgment. \"It was listening,\" one said. \"So we waited for it to finish.\"</string>
     <string name="article_30">Decommissioned terminals powered on without external input. Screens displayed strings of coordinates, each corresponding to erased facilities. Operators stood by, unsure whether to document or pray.\nWhen the power grid was cut, the terminals continued transmitting internally. The last visible message read simply: \"Arrival confirmed.\"</string>
-
 </resources>
