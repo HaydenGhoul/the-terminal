@@ -10,65 +10,56 @@ import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import ua.hayden.theterminal.model.Advertisement
-import ua.hayden.theterminal.model.Article
-import ua.hayden.theterminal.model.NewsFeed
-import ua.hayden.theterminal.model.NewsFeedRepository
-import ua.hayden.theterminal.model.ResourceProviderImpl
+import ua.hayden.theterminal.data.repository.NewsFeedPreviewData.getNewsFeedItemsForPreview
+import ua.hayden.theterminal.domain.model.NewsFeed
+import ua.hayden.theterminal.domain.model.NewsFeed.Advertisement
+import ua.hayden.theterminal.domain.model.NewsFeed.Article
 import ua.hayden.theterminal.ui.newsfeed.components.advertisement.AdvertisementCard
 import ua.hayden.theterminal.ui.newsfeed.components.article.ArticleCard
 import ua.hayden.theterminal.ui.theme.AppDimens
 import ua.hayden.theterminal.ui.theme.TheTerminalTheme
-import ua.hayden.theterminal.utils.toColumnCount
-import ua.hayden.theterminal.viewmodel.NewsFeedViewModel
-import ua.hayden.theterminal.ui.newsfeed.components.article.ArticleCardContent
+import ua.hayden.theterminal.utils.toGridColumnCount
 
 /**
  * Displays the news feed as a [LazyVerticalStaggeredGrid], mixing [ArticleCard] entries
  * with [AdvertisementCard] items.
  *
-The grid adapts to window width:
- * - Column count is derived from [widthSizeClass].
- * - In compact layouts, article cards can be expanded or collapsed.
- *   In larger layouts, cards are always expanded.
- *
- * State is sourced from [NewsFeedViewModel], including the news feed items and
- * the per-card expansion map.
+ * Layout behavior:
+ * - Number of columns is determined by [widthSizeClass].
+ * - In compact layouts, article cards can expand or collapse individually.
+ * - In larger layouts, article cards are always fully expanded.
  *
  * @param modifier Layout modifier for the grid.
+ * @param staggeredGridState Scroll state for the staggered grid.
  * @param widthSizeClass Determines the number of grid columns.
  * @param contentPadding Padding around the grid content.
- * @param gridState Scroll state for the staggered grid.
- * @param viewModel Provides [NewsFeed] data and event flow.
+ * @param gridItems List of [NewsFeed] items to display.
+ * @param expandedArticleCards Map of article IDs to their expanded/collapsed state.
+ * @param onArticleClick Callback for article card clicks.
  * @param onReadMoreClick Callback invoked when "Read More" is pressed in article card.
- * @param onAdvertisementCardClick Callback for advertisement card clicks.
+ * @param onAdClick Callback for advertisement card clicks.
  */
 @Composable
 fun NewsFeedGrid(
     modifier: Modifier = Modifier,
+    staggeredGridState: LazyStaggeredGridState,
     widthSizeClass: WindowWidthSizeClass,
     contentPadding: PaddingValues,
-    gridState: LazyStaggeredGridState,
-    viewModel: NewsFeedViewModel,
+    gridItems: List<NewsFeed>,
+    expandedArticleCards: Map<Int, Boolean>,
+    onArticleClick: (Int) -> Unit,
     onReadMoreClick: (String?) -> Unit,
-    onAdvertisementCardClick: (String?) -> Unit
+    onAdClick: (String?) -> Unit
 ) {
-    val columnCount = widthSizeClass.toColumnCount()
     val isWindowCompact = widthSizeClass == WindowWidthSizeClass.Compact
 
-    val newsFeed by viewModel.newsFeed.collectAsStateWithLifecycle()
-    val expandedCards by viewModel.expandedCards.collectAsStateWithLifecycle()
-
     LazyVerticalStaggeredGrid(
-        columns = StaggeredGridCells.Fixed(columnCount),
-        state = gridState,
+        columns = StaggeredGridCells.Fixed(widthSizeClass.toGridColumnCount()),
+        state = staggeredGridState,
         verticalItemSpacing = AppDimens.VerticalItemSpacing,
         horizontalArrangement = Arrangement.spacedBy(AppDimens.HorizontalItemSpacing),
         contentPadding = PaddingValues(
@@ -77,16 +68,16 @@ fun NewsFeedGrid(
         ),
         modifier = modifier.padding(horizontal = AppDimens.PaddingMedium)
     ) {
-        items(newsFeed, key = { it.id }) { newsFeedItem ->
+        items(gridItems, key = { it.id }) { newsFeedItem ->
             when (newsFeedItem) {
                 is Article -> {
-                    val cardExpandedState = expandedCards[newsFeedItem.id] ?: false
+                    val cardExpandedState = expandedArticleCards[newsFeedItem.id] ?: false
                     val isCardExpanded = if (isWindowCompact) cardExpandedState else true
                     ArticleCard(
                         article = newsFeedItem,
                         isWindowCompact = isWindowCompact,
                         isCardExpanded = isCardExpanded,
-                        onCardClick = { viewModel.toggleCardExpandedState(newsFeedItem.id) },
+                        onCardClick = { onArticleClick(newsFeedItem.id) },
                         onReadMoreClick = onReadMoreClick
                     )
                 }
@@ -94,7 +85,7 @@ fun NewsFeedGrid(
                 is Advertisement -> {
                     AdvertisementCard(
                         advertisement = newsFeedItem,
-                        onAdvertisementCardClick = onAdvertisementCardClick
+                        onCardClick = onAdClick
                     )
                 }
             }
@@ -102,54 +93,42 @@ fun NewsFeedGrid(
     }
 }
 
-/**
- * Preview of [NewsFeedGrid] in light theme.
- */
 @Preview(showBackground = false)
 @Composable
 fun NewsFeedGridLightPreview() {
     val context = LocalContext.current
+    val (previewItems, expandedCards) = getNewsFeedItemsForPreview(context, expandArticles = false)
 
-    val viewModel = remember {
-        NewsFeedViewModel(
-            repository = NewsFeedRepository,
-            resProvider = ResourceProviderImpl(context)
-        )
-    }
     TheTerminalTheme {
         NewsFeedGrid(
             widthSizeClass = WindowWidthSizeClass.Compact,
             contentPadding = PaddingValues(0.dp),
-            gridState = rememberLazyStaggeredGridState(),
-            viewModel = viewModel,
+            staggeredGridState = rememberLazyStaggeredGridState(),
+            gridItems = previewItems,
+            expandedArticleCards = expandedCards,
+            onArticleClick = {},
             onReadMoreClick = {},
-            onAdvertisementCardClick = {}
+            onAdClick = {}
         )
     }
 }
 
-/**
- * Preview of [NewsFeedGrid] in dark theme.
- */
 @Preview(showBackground = false)
 @Composable
 fun NewsFeedGridDarkPreview() {
     val context = LocalContext.current
+    val (previewItems, expandedCards) = getNewsFeedItemsForPreview(context, expandArticles = false)
 
-    val viewModel = remember {
-        NewsFeedViewModel(
-            repository = NewsFeedRepository,
-            resProvider = ResourceProviderImpl(context)
-        )
-    }
     TheTerminalTheme(darkTheme = true) {
         NewsFeedGrid(
             widthSizeClass = WindowWidthSizeClass.Compact,
             contentPadding = PaddingValues(0.dp),
-            gridState = rememberLazyStaggeredGridState(),
-            viewModel = viewModel,
+            staggeredGridState = rememberLazyStaggeredGridState(),
+            gridItems = previewItems,
+            expandedArticleCards = expandedCards,
+            onArticleClick = {},
             onReadMoreClick = {},
-            onAdvertisementCardClick = {}
+            onAdClick = {}
         )
     }
 }

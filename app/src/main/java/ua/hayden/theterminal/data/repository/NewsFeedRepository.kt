@@ -1,9 +1,11 @@
-package ua.hayden.theterminal.model
+package ua.hayden.theterminal.data.repository
 
 import ua.hayden.theterminal.R
+import ua.hayden.theterminal.data.model.AdvertisementRes
+import ua.hayden.theterminal.data.model.ArticleRes
 
 object NewsFeedRepository {
-    val articleList = listOf(
+    val articles = listOf(
         ArticleRes(
             id = 0,
             headline = R.string.article_headline_1,
@@ -336,18 +338,14 @@ object NewsFeedRepository {
         ),
     )
 
-    val adsList = listOf(
+    val ads = listOf(
         AdvertisementRes(
             id = 30,
-            image = R.drawable.article_image_landscape,
+            image = R.drawable.car_riga,
             headline = R.string.ad_title_1,
             caption = R.string.ad_caption_1,
             model = R.string.ad_model_1,
             url = R.string.ad_url_1
         )
     )
-    val firstArticleExample = articleList[0]
-    val secondArticleExample = articleList[1]
-
-    val advertisementExample = adsList[0]
 }

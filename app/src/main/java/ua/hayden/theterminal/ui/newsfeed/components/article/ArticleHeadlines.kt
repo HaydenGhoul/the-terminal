@@ -4,7 +4,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
-import ua.hayden.theterminal.model.Article
+import ua.hayden.theterminal.domain.model.NewsFeed.Article
+import ua.hayden.theterminal.ui.components.TextWithDivider
 import ua.hayden.theterminal.ui.theme.AppDimens
 import ua.hayden.theterminal.ui.theme.article
 
@@ -19,15 +20,15 @@ import ua.hayden.theterminal.ui.theme.article
 @Composable
 fun ArticleHeadlines(modifier: Modifier = Modifier, article: Article) {
     @Composable
-    fun Headline(text: String, style: TextStyle) {
+    fun HeadlineText(text: String, style: TextStyle) {
         TextWithDivider(
             modifier = modifier,
-            space = AppDimens.SpacerSizeMedium,
+            verticalSpacing = AppDimens.SpacerSizeMedium,
             text = text,
             style = style,
-            adaptiveDivider = false
+            isAdaptiveDivider = false
         )
     }
-    Headline(article.headline, MaterialTheme.typography.article.headline)
-    Headline(article.subheadline, MaterialTheme.typography.article.subheadline)
+    HeadlineText(article.headline, MaterialTheme.typography.article.headline)
+    HeadlineText(article.subheadline, MaterialTheme.typography.article.subheadline)
 }

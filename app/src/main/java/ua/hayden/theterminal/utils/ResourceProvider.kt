@@ -1,4 +1,4 @@
-package ua.hayden.theterminal.model
+package ua.hayden.theterminal.utils
 
 import android.content.Context
 import androidx.annotation.StringRes

@@ -8,61 +8,69 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import ua.hayden.theterminal.R
-import ua.hayden.theterminal.model.Article
-import ua.hayden.theterminal.model.Advertisement
-import ua.hayden.theterminal.model.NewsFeed
-import ua.hayden.theterminal.model.NewsFeedRepository
-import ua.hayden.theterminal.model.ResourceProvider
+import ua.hayden.theterminal.domain.model.NewsFeed
+import ua.hayden.theterminal.data.repository.NewsFeedRepository
+import ua.hayden.theterminal.utils.ResourceProvider
 
 class NewsFeedViewModel(
     private val repository: NewsFeedRepository,
-    private val resProvider: ResourceProvider
+    private val resourceProvider: ResourceProvider
 ) : ViewModel() {
-    private val _newsFeed = MutableStateFlow<List<NewsFeed>>(emptyList())
-    private val _expandedCards = MutableStateFlow<Map<Int, Boolean>>(emptyMap())
-    private val _events = MutableSharedFlow<UiEvent>()
-    val newsFeed = _newsFeed.asStateFlow()
-    val expandedCards = _expandedCards.asStateFlow()
-    val events = _events.asSharedFlow()
+    private val _newsFeedItems = MutableStateFlow<List<NewsFeed>>(emptyList())
+    private val _expandedArticleCards = MutableStateFlow<Map<Int, Boolean>>(emptyMap())
+    private val _uiEvents = MutableSharedFlow<NewsFeedUiEvent>()
+    val newsFeedItems = _newsFeedItems.asStateFlow()
+    val expandedArticleCards = _expandedArticleCards.asStateFlow()
+    val uiEvents = _uiEvents.asSharedFlow()
 
 
-    init { loadNewsFeed() }
+    init { loadNewsFeedItems() }
 
-    private fun loadNewsFeed() {
+    private fun loadNewsFeedItems() {
         viewModelScope.launch {
-            val mappedArticles = repository.articleList.map { it.toUi(resProvider) }
-            val mappedAds = repository.adsList.map { it.toUi(resProvider) }
-            _newsFeed.value = mappedArticles + mappedAds
+            val mappedArticles = repository.articles.map { it.toArticle(resourceProvider) }
+            val mappedAds = repository.ads.map { it.toAdvertisement(resourceProvider) }
+            _newsFeedItems.value = mappedArticles + mappedAds
         }
     }
 
-    private suspend fun handleUrlClick(url: String?) {
+    private suspend fun handleFeedItemClick(url: String?) {
             if (url != null) {
-                _events.emit(UiEvent.OpenUrl(url))
+                _uiEvents.emit(NewsFeedUiEvent.OpenUrl(url))
             } else {
-                _events.emit(
-                    UiEvent.ShowSnackbar(
-                        resProvider.getString(R.string.snackbar_access_denied)
-                    )
-                )
+                _uiEvents.emit(NewsFeedUiEvent.ShowSnackbar(resourceProvider.getString(R.string.snackbar_access_denied)))
             }
     }
 
-    fun toggleCardExpandedState(id: Int) {
-        _expandedCards.value = _expandedCards.value.toMutableMap().also {
+    /**
+     * Toggles the expanded/collapsed state of a specific article card.
+     *
+     * Used by the UI to expand or collapse a card when the user clicks it.
+     *
+     * @param id The unique identifier of the article card to toggle.
+     */
+    fun toggleArticleCardExpandedState(id: Int) {
+        _expandedArticleCards.value = _expandedArticleCards.value.toMutableMap().also {
             val current = it[id] ?: false
             it[id] = !current
         }
     }
 
-    fun openUrlOrSnackbar(url: String?) {
+    /**
+     * Handles a click on a URL by either opening it in a browser or showing a snackbar if the URL is null.
+     *
+     * This method is intended for direct use from the UI (e.g., from Read More buttons or advertisement clicks).
+     *
+     * @param url The URL to open, or null if unavailable.
+     */
+    fun onFeedItemClick(url: String?) {
         viewModelScope.launch {
-            handleUrlClick(url)
+            handleFeedItemClick(url)
         }
     }
 }
 
-sealed interface UiEvent {
-    data class OpenUrl(val url: String) : UiEvent
-    data class ShowSnackbar(val message: String) : UiEvent
+sealed interface NewsFeedUiEvent {
+    data class OpenUrl(val url: String) : NewsFeedUiEvent
+    data class ShowSnackbar(val message: String) : NewsFeedUiEvent
 }

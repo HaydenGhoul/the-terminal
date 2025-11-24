@@ -11,11 +11,12 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import ua.hayden.theterminal.R
-import ua.hayden.theterminal.model.Article
+import ua.hayden.theterminal.domain.model.NewsFeed.Article
 import ua.hayden.theterminal.ui.theme.article
 
 /**
- * Displays the byline section of an [Article], including author and news organization.
+ * Displays the byline section of an [Article], including
+ * author and news organization with styled text.
  *
  * @param modifier Modifier applied to the container.
  * @param article The [Article] providing author and news organization data.
@@ -28,34 +29,23 @@ fun ArticleByline(
     Column(
         modifier = modifier
     ) {
-        ArticleAuthor(article.author)
-        NewsOrg(article.newsOrg)
+        BylineAuthor(Modifier.fillMaxWidth(), article.author)
+        BylineNewsOrg(Modifier.fillMaxWidth(), article.newsOrg)
     }
 }
 
-/**
- * Displays the author line of an article with styled text.
- *
- * @param author The author name to display.
- */
 @Composable
-fun ArticleAuthor(author: String) {
+fun BylineAuthor(modifier: Modifier = Modifier, author: String) {
     Text(
         text = stringResource(R.string.label_by) + " " + author,
         style = MaterialTheme.typography.article.byline,
         textAlign = TextAlign.Center,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
     )
 }
 
-
-/**
- * Displays the news organization line of an article with styled text.
- *
- * @param newsOrg The name of the news organization.
- */
 @Composable
-fun NewsOrg(newsOrg: String) {
+fun BylineNewsOrg(modifier: Modifier = Modifier, newsOrg: String) {
     val text = buildAnnotatedString {
         withStyle(MaterialTheme.typography.article.newsOrg.toSpanStyle()) {
             append(stringResource(R.string.label_staff_reporter_of))
@@ -68,6 +58,6 @@ fun NewsOrg(newsOrg: String) {
     Text(
         text = text,
         textAlign = TextAlign.Center,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
     )
 }

@@ -12,7 +12,7 @@ import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSiz
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
 import ua.hayden.theterminal.ui.theme.TheTerminalTheme
-import ua.hayden.theterminal.utils.lockOrientationCompact
+import ua.hayden.theterminal.utils.enableUnspecifiedOrientation
 import ua.hayden.theterminal.viewmodel.NewsFeedViewModel
 import ua.hayden.theterminal.viewmodel.newsFeedViewModelFactory
 
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        lockOrientationCompact()
+        enableUnspecifiedOrientation()
 
         setContent {
             val windowSizeClass = calculateWindowSizeClass(this@MainActivity)

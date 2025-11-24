@@ -3,17 +3,16 @@ package ua.hayden.theterminal.ui.newsfeed.components.article
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Card
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass.Companion.Compact
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import ua.hayden.theterminal.model.Article
-import ua.hayden.theterminal.model.NewsFeedRepository
-import ua.hayden.theterminal.model.ResourceProviderImpl
-import ua.hayden.theterminal.ui.theme.TheTerminalTheme
+import ua.hayden.theterminal.data.repository.NewsFeedPreviewData.getArticleForPrev
+import ua.hayden.theterminal.domain.model.NewsFeed.Article
 import ua.hayden.theterminal.ui.newsfeed.NewsFeedGrid
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass.Companion.Compact
+import ua.hayden.theterminal.ui.theme.TheTerminalTheme
 
 /**
  * Displays a single article card within the [NewsFeedGrid], adapting its content based
@@ -42,43 +41,29 @@ fun ArticleCard(
     }
 }
 
-/**
- * Displays a card that can optionally be clickable, adapting behavior based on [clickEnabled].
- *
- * If [clickEnabled] is true, the card is interactive and invokes [onClick] when tapped.
- * Otherwise, the card is displayed as static content.
- *
- * @param modifier Modifier applied to the card layout.
- * @param clickEnabled Determines whether the card should respond to clicks.
- * @param onClick Lambda invoked when the card is clicked (only used if [clickEnabled] is true).
- * @param content The composable content displayed inside the card, with [ColumnScope] as
- *  *             receiver to allow vertical arrangement of elements.
- */
 @Composable
 fun AdaptiveCard(
     modifier: Modifier = Modifier,
-    clickEnabled: Boolean,
+    isClickable: Boolean,
     onClick: () -> Unit,
     content: @Composable (ColumnScope) -> Unit
 ) {
-    if (clickEnabled) {
+    if (isClickable) {
         Card(modifier = modifier, onClick = onClick, content = content)
     } else {
         Card(modifier = modifier, content = content)
     }
 }
 
-/**
- * Preview of [ArticleCard] in light theme.
- */
+
+
 @Preview(showBackground = false)
 @Composable
 fun ArticleCardLightPreview() {
     val context = LocalContext.current
-    val article = NewsFeedRepository.firstArticleExample.toUi(ResourceProviderImpl(context))
     TheTerminalTheme {
         ArticleCard(
-            article = article,
+            article = getArticleForPrev(context, 0),
             isWindowCompact = true,
             isCardExpanded = false,
             onCardClick = {},
@@ -87,17 +72,13 @@ fun ArticleCardLightPreview() {
     }
 }
 
-/**
- * Preview of [ArticleCard] in dark theme.
- */
 @Preview(showBackground = false)
 @Composable
 fun ArticleCardDarkPreview() {
     val context = LocalContext.current
-    val article = NewsFeedRepository.secondArticleExample.toUi(ResourceProviderImpl(context))
     TheTerminalTheme(darkTheme = true) {
         ArticleCard(
-            article = article,
+            article = getArticleForPrev(context, 1),
             isWindowCompact = true,
             isCardExpanded = false,
             onCardClick = {},
